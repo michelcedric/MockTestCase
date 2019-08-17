@@ -56,7 +56,7 @@ namespace MockTest
         {
             var serviceMock = new Mock<IMeteringDataServiceAgent>();
             serviceMock.Setup(s => s.GetDataList(It.IsAny<DateTime>())).Returns(_data);
-            var result3 = serviceMock.Object.GetDataList(DateTime.Now);
+            var result3 = serviceMock.Object.GetDataList(new DateTime(2019,1,1));
 
             //Expected the list but received null
             //Because during the setup I put It.IsAny<DateTime>() and not It.IsAny<DateTimeOffset>()
